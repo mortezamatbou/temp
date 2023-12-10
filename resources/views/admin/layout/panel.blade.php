@@ -27,9 +27,7 @@
                         @can('add coins')
                             <li><a href="{{ route('admin.login.form') }}">Add Coin</a></li>
                         @endcan
-                        <li><a href="{{ route('admin.login.form') }}">Logout</a></li>
-                    @else
-                        <li><a href="{{ route('admin.login.form') }}">Login</a></li>
+                        <li><a href="{{ route('admin.logout') }}">Logout</a></li>
                     @endauth
                 @show
             </ul>
