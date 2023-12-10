@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\ArticleController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\LoginController;
 use Illuminate\Support\Facades\Route;
@@ -14,6 +15,8 @@ Route::prefix('dashboard')
     ->group(function () {
 
         Route::get('/', 'home')->name('admin.dashboard');
+
+        Route::resource('articles', ArticleController::class);
 
     });
 
