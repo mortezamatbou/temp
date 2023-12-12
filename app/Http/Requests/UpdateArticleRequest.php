@@ -3,7 +3,14 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Support\Str;
 
+/**
+ * @property int status_id
+ * @property string title
+ * @property string body
+ * @property string slug
+ */
 class UpdateArticleRequest extends FormRequest
 {
     /**
@@ -11,7 +18,7 @@ class UpdateArticleRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -21,8 +28,26 @@ class UpdateArticleRequest extends FormRequest
      */
     public function rules(): array
     {
+        $article_id = $this->route('article.id');
+
         return [
-            //
+            'title' => 'bail|required|max:100|string',
+            'body' => 'bail|required|max:5000|string',
+            'slug' => "bail|required|max:100|unique:App\Models\Article,slug,$article_id",
+            'status_id' => 'bail|required|integer|exists:articles_status,id'
         ];
     }
+
+    /**
+     * Prepare the data for validation.
+     */
+    protected function prepareForValidation(): void
+    {
+        $slug = Str::lower(Str::slug($this->slug));
+        $this->merge([
+            'slug' => $slug,
+        ]);
+    }
+
+
 }
