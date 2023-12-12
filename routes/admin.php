@@ -22,7 +22,6 @@ Route::middleware(['auth'])->resource('articles', ArticleController::class)->nam
         'create' => 'admin.articles.create',
         'store' => 'admin.articles.store',
         'show' => 'admin.articles.show',
-        'edit' => 'admin.articles.edit',
         'update' => 'admin.articles.update',
         'destroy' => 'admin.articles.destroy',
     ]
