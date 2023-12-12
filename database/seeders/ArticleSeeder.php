@@ -18,8 +18,7 @@ class ArticleSeeder extends Seeder
     {
         DB::table('articles_status')->insert([
             ['title' => 'active', 'created_at' => now()->toDateTime()],
-            ['title' => 'disable', 'created_at' => now()->toDateTime()],
-            ['title' => 'deleted', 'created_at' => now()->toDateTime()]
+            ['title' => 'disable', 'created_at' => now()->toDateTime()]
         ]);
 
         Article::factory(10)->create();
