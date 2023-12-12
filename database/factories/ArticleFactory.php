@@ -21,7 +21,7 @@ class ArticleFactory extends Factory
             'slug' => fake()->unique()->slug(2),
             'body' => fake()->text(),
             'user_id' => fake()->numberBetween(1, 6),
-            'status_id' => fake()->numberBetween(1, 3)
+            'status_id' => fake()->numberBetween(1, 2)
         ];
     }
 }
