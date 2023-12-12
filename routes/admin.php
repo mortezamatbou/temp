@@ -13,11 +13,20 @@ Route::prefix('dashboard')
     ->middleware(['auth'])
     ->controller(DashboardController::class)
     ->group(function () {
+    Route::get('/', 'home')->name('admin.dashboard');
+});
 
-        Route::get('/', 'home')->name('admin.dashboard');
+Route::middleware(['auth'])->resource('articles', ArticleController::class)->names(
+    [
+        'index' => 'admin.articles.index',
+        'create' => 'admin.articles.create',
+        'store' => 'admin.articles.store',
+        'show' => 'admin.articles.show',
+        'edit' => 'admin.articles.edit',
+        'update' => 'admin.articles.update',
+        'destroy' => 'admin.articles.destroy',
+    ]
+);
 
-        Route::resource('articles', ArticleController::class);
-
-    });
 
 
