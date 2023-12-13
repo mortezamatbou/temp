@@ -2,21 +2,34 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Criteria\ArticleCriteria;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreArticleRequest;
 use App\Http\Requests\UpdateArticleRequest;
-use App\Models\Article;
+use App\Entities\Article;
+use App\Repositories\ArticleRepository;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\View\View;
 
 class ArticleController extends Controller
 {
+
+    /**
+     * @var ArticleRepository
+     */
+    protected $repository;
+
+    function __construct(ArticleRepository $repository)
+    {
+        $this->repository = $repository;
+    }
+
     /**
      * Display a listing of the resource.
      */
     public function index(): View
     {
-        $articles = Article::all();
+        $articles = $this->repository->my_articles();
         return view('admin.articles', ['articles' => $articles, 'title' => 'Articles']);
     }
 
@@ -31,7 +44,7 @@ class ArticleController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreArticleRequest $request)
+    public function store(StoreArticleRequest $request): RedirectResponse
     {
         return to_route('admin.articles.index');
     }
@@ -49,15 +62,14 @@ class ArticleController extends Controller
      */
     public function update(UpdateArticleRequest $request, Article $article): RedirectResponse
     {
-
         return to_route('admin.articles.show', ['article' => $article->id]);
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Article $article)
+    public function destroy(Article $article): RedirectResponse
     {
-        //
+        return to_route('admin.articles.show', ['article' => $article->id]);
     }
 }
