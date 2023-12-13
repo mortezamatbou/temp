@@ -2,8 +2,11 @@
 
 namespace App\Entities;
 
+use App\Models\ArticleStatus;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Prettus\Repository\Contracts\Transformable;
 use Prettus\Repository\Traits\TransformableTrait;
 
@@ -34,5 +37,19 @@ class Article extends Model implements Transformable
         'slug',
         'body'
     ];
+
+    public function user(): BelongsTo
+    {
+        return $this->belongsTo(User::class)->withDefault([
+            'email' => 'ABC'
+        ]);
+    }
+
+    public function status(): BelongsTo
+    {
+        return $this->belongsTo(ArticleStatus::class)->withDefault([
+            'status_title' => 'active'
+        ]);
+    }
 
 }

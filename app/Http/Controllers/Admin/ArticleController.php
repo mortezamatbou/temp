@@ -8,6 +8,7 @@ use App\Http\Requests\StoreArticleRequest;
 use App\Http\Requests\UpdateArticleRequest;
 use App\Entities\Article;
 use App\Repositories\ArticleRepository;
+use App\Repositories\ArticleRepositoryEloquent;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\View\View;
 
@@ -15,7 +16,7 @@ class ArticleController extends Controller
 {
 
     /**
-     * @var ArticleRepository
+     * @var ArticleRepositoryEloquent
      */
     protected $repository;
 

@@ -16,9 +16,10 @@ class ArticleRepositoryEloquent extends BaseRepository implements ArticleReposit
 {
 
     protected $fieldSearchable = [
-        'id',
+        'id' => '=',
         'title' => 'like',
-        'slug' => 'like'
+        'slug' => 'like',
+        'status_id' => '='
     ];
 
     /**
@@ -45,7 +46,7 @@ class ArticleRepositoryEloquent extends BaseRepository implements ArticleReposit
 
     public function my_articles()
     {
-        return $this->pushCriteria(new ArticleCriteria())->all();
+        return $this->pushCriteria(new ArticleCriteria())->with(['user', 'status'])->all();
     }
 
 }
