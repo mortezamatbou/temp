@@ -71,3 +71,12 @@
 
 @endsection
 
+
+<script>
+    window.onload = function () {
+        $("#article-form").submit(function(e) {
+            e.preventDefault();
+
+        });
+    }
+</script>
