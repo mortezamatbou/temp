@@ -23,7 +23,7 @@
     <table class="table col-12">
         <tr>
             <td>User</td>
-            <td>{{ $article->user_email }}</td>
+            <td>{{ $article->user->email }}</td>
         </tr>
         <tr>
             <td>Create date</td>
