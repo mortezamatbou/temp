@@ -56,8 +56,8 @@
                 <input class="form-control" type="text" value="{{ old('slug', $article->slug) }}" name="slug">
             </td>
         </div>
-        <div class="form-group">
-            <td colspan="2" class="text-right">
+        <div class="form-group text-right">
+            <td colspan="2">
                 <button class="btn btn-sm btn-success" type="submit">Update</button>
             </td>
         </div>
