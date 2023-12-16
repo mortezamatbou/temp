@@ -20,5 +20,17 @@ class UserSeeder extends Seeder
             'email' => 'mori@lobdown.com',
             'password' => '123456789'
         ]);
+
+        User::factory()->create([
+            'name' => 'Ali',
+            'email' => 'ali@lobdown.com',
+            'password' => '123456789'
+        ]);
+
+        User::factory()->create([
+            'name' => 'Hossein',
+            'email' => 'hossein@lobdown.com',
+            'password' => '123456789'
+        ]);
     }
 }
