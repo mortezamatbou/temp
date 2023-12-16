@@ -34,7 +34,8 @@
                     <select class="form-control" name="status_id">
                         <option value="" {{ !$status_id ? 'selected' : '' }}>all</option>
                         @foreach($status_list as $row)
-                            <option value="{{ $row->id }}" {{ $status_id == $row->id ? 'selected' : '' }}>{{ $row->title }}</option>
+                            <option
+                                value="{{ $row->id }}" {{ $status_id == $row->id ? 'selected' : '' }}>{{ $row->title }}</option>
                         @endforeach
                     </select>
                 </div>
@@ -76,7 +77,32 @@
 <script>
     window.onload = function () {
         $("#article-form").submit(function (e) {
-            // e.preventDefault();
+            e.preventDefault();
+
+            const title = $('input[name=title]').val();
+            const slug = $('input[name=slug]').val();
+            const status_id = $('select[name=status_id]').find(':selected').val();
+
+            let searchable = [];
+
+            if (title) {
+                searchable.push('title:' + title);
+            }
+
+            if (slug) {
+                searchable.push('slug:' + slug);
+            }
+
+            if (status_id) {
+                searchable.push('status_id:' + status_id);
+            }
+
+
+            // search=title=Test;slug=php;status_id=1
+
+            if (searchable) {
+                window.location = "{{ route('admin.articles.index') }}" + "?search=" + searchable.join(';');
+            }
 
         });
     }
