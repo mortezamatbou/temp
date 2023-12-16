@@ -8,7 +8,8 @@
 
 @section('body')
 
-    <h2 class="mt-4 mb-3">Articles <a class="btn btn-warning" href="{{ route('admin.articles.create') }}">Add New Article</a></h2>
+    <h2 class="mt-4 mb-3">Articles <a class="btn btn-warning" href="{{ route('admin.articles.create') }}">Add New
+            Article</a></h2>
 
     <form id="article-form" action="{{ route('admin.articles.index') }}" method="get">
         <div class="row mb-3">
@@ -32,8 +33,9 @@
                     @endphp
                     <select class="form-control" name="status_id">
                         <option value="" {{ !$status_id ? 'selected' : '' }}>all</option>
-                        <option value="1" {{ $status_id == 1 ? 'selected' : '' }}>active</option>
-                        <option value="2" {{ $status_id == 2 ? 'selected' : '' }}>disable</option>
+                        @foreach($status_list as $row)
+                            <option value="{{ $row->id }}" {{ $status_id == $row->id ? 'selected' : '' }}>{{ $row->title }}</option>
+                        @endforeach
                     </select>
                 </div>
             </div>
@@ -73,7 +75,7 @@
 
 <script>
     window.onload = function () {
-        $("#article-form").submit(function(e) {
+        $("#article-form").submit(function (e) {
             // e.preventDefault();
 
         });

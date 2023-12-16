@@ -38,8 +38,9 @@
         <div class="form-group">
             <label>Status</label>
             <select class="form-control" name="status_id">
-                <option value="1">Active</option>
-                <option value="2">Disable</option>
+                @foreach($status_list as $row)
+                    <option value="{{ $row->id }}" {{ $article->status_id == $row->id ? 'selected' : '' }}>{{ $row->title }}</option>
+                @endforeach
             </select>
         </div>
         <div class="form-group">
