@@ -8,7 +8,7 @@
 
 @section('body')
 
-    <h2 class="mt-4 mb-3">Articles</h2>
+    <h2 class="mt-4 mb-3">Articles <a class="btn btn-warning" href="{{ route('admin.articles.create') }}">Add New Article</a></h2>
 
     <form id="article-form" action="{{ route('admin.articles.index') }}" method="get">
         <div class="row mb-3">
@@ -31,7 +31,7 @@
                         $status_id = app('request')->input('status_id', 0)
                     @endphp
                     <select class="form-control" name="status_id">
-                        <option value="0" {{ !$status_id ? 'selected' : '' }}>all</option>
+                        <option value="" {{ !$status_id ? 'selected' : '' }}>all</option>
                         <option value="1" {{ $status_id == 1 ? 'selected' : '' }}>active</option>
                         <option value="2" {{ $status_id == 2 ? 'selected' : '' }}>disable</option>
                     </select>

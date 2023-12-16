@@ -10,8 +10,6 @@
 
     <h2 class="mt-4 mb-3">Articles {{ $article->title }} #{{ $article->id }}</h2>
 
-    <p class="text-right"><a class="btn btn-warning" href="{{ route('admin.articles.create') }}">Add New Article</a></p>
-
     @if ($errors->any())
         <ul class="alert alert-danger">
             @foreach ($errors->all() as $error)
