@@ -16,7 +16,6 @@ class ArticleRepositoryEloquent extends BaseRepository implements ArticleReposit
 {
 
     protected $fieldSearchable = [
-        'id' => '=',
         'title' => 'like',
         'slug' => 'like',
         'status_id' => '='
