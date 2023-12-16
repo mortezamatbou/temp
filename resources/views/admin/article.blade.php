@@ -39,7 +39,8 @@
             <label>Status</label>
             <select class="form-control" name="status_id">
                 @foreach($status_list as $row)
-                    <option value="{{ $row->id }}" {{ $article->status_id == $row->id ? 'selected' : '' }}>{{ $row->title }}</option>
+                    <option
+                        value="{{ $row->id }}" {{ $article->status_id == $row->id ? 'selected' : '' }}>{{ $row->title }}</option>
                 @endforeach
             </select>
         </div>
@@ -57,11 +58,13 @@
                 <input class="form-control" type="text" value="{{ old('slug', $article->slug) }}" name="slug">
             </td>
         </div>
-        <div class="form-group text-right">
-            <td colspan="2">
-                <button class="btn btn-sm btn-success" type="submit">Update</button>
-            </td>
-        </div>
+        @can('update articles')
+            <div class="form-group text-right">
+                <td colspan="2">
+                    <button class="btn btn-sm btn-success" type="submit">Update</button>
+                </td>
+            </div>
+        @endcan
     </form>
 
 @endsection

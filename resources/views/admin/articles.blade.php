@@ -8,8 +8,11 @@
 
 @section('body')
 
-    <h2 class="mt-4 mb-3">Articles <a class="btn btn-warning" href="{{ route('admin.articles.create') }}">Add New
-            Article</a></h2>
+    <h2 class="mt-4 mb-3">Articles
+        @can('create articles')
+            <a class="btn btn-warning" href="{{ route('admin.articles.create') }}">Add New Article</a>
+        @endcan
+    </h2>
 
     <form id="article-form" action="{{ route('admin.articles.index') }}" method="get">
         <div class="row mb-3">

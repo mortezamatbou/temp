@@ -20,10 +20,13 @@
         <div class="col-12">
             <ul>
                 @section('menu')
-                    @auth('web')
+                    @can('list articles')
                         <li><a href="{{ route('admin.articles.index') }}">Articles</a></li>
-                        <li><a href="{{ route('admin.logout') }}">Logout</a></li>
-                    @endauth
+                    @endcan
+                    @can('create articles')
+                        <li><a href="{{ route('admin.articles.create') }}">Add New Article</a></li>
+                    @endcan
+                    <li><a href="{{ route('admin.logout') }}">Logout</a></li>
                 @show
             </ul>
             <hr>
