@@ -25,7 +25,7 @@ Route::middleware(['auth'])->resource('articles', ArticleController::class)->nam
         'update' => 'admin.articles.update',
         'destroy' => 'admin.articles.destroy',
     ]
-);
+)->whereNumber('article');
 
 
 
