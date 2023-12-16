@@ -12,7 +12,6 @@
 
     <form id="article-form" action="{{ route('admin.articles.index') }}" method="get">
         <div class="row mb-3">
-            @csrf
             <div class="col-4">
                 <div class="form-group">
                     <label>Title</label> &nbsp;
@@ -75,7 +74,7 @@
 <script>
     window.onload = function () {
         $("#article-form").submit(function(e) {
-            e.preventDefault();
+            // e.preventDefault();
 
         });
     }
