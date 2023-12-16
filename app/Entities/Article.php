@@ -35,7 +35,8 @@ class Article extends Model implements Transformable
         'user_id',
         'title',
         'slug',
-        'body'
+        'body',
+        'status_id'
     ];
 
     public function user(): BelongsTo
