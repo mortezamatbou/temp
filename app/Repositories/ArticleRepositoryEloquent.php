@@ -40,6 +40,13 @@ class ArticleRepositoryEloquent extends BaseRepository implements ArticleReposit
         $this->pushCriteria(app(RequestCriteria::class));
     }
 
+    public function new_article(array $data)
+    {
+        $data['user_id'] = auth()->user()->id;
+        return $this->create($data);
+    }
+
+
     public function validator()
     {
     }

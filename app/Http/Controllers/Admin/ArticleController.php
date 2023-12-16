@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Criteria\ArticleCriteria;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreArticleRequest;
 use App\Http\Requests\UpdateArticleRequest;
@@ -41,7 +40,8 @@ class ArticleController extends Controller
      */
     public function create(): View
     {
-        return view('admin.article_create', ['title' => 'Add Article']);
+        $status_list = ArticleStatus::all();
+        return view('admin.article_create', ['title' => 'Add Article', 'status_list' => $status_list]);
     }
 
     /**
@@ -49,6 +49,7 @@ class ArticleController extends Controller
      */
     public function store(StoreArticleRequest $request): RedirectResponse
     {
+        $this->repository->new_article($request->validated());
         return to_route('admin.articles.index');
     }
 

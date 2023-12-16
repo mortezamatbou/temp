@@ -37,8 +37,9 @@
         <div class="form-group">
             <label>Status</label>
             <select class="form-control" name="status_id">
-                <option value="1">Active</option>
-                <option value="2">disable</option>
+                @foreach($status_list as $row)
+                    <option value="{{ $row->id }}">{{ $row->title }}</option>
+                @endforeach
             </select>
         </div>
         <div class="form-group">
