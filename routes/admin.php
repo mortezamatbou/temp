@@ -13,19 +13,16 @@ Route::prefix('dashboard')
     ->middleware(['auth'])
     ->controller(DashboardController::class)
     ->group(function () {
-    Route::get('/', 'home')->name('admin.dashboard');
+        Route::get('/', 'home')->name('admin.dashboard');
+    });
+
+Route::middleware(['auth'])->prefix('articles')->controller(ArticleController::class)->group(function () {
+    Route::middleware('can:list articles')->get('/', 'index')->name('admin.articles.index');
+    Route::middleware('can:create articles')->get('/create', 'create')->name('admin.articles.create');
+    Route::middleware('can:create articles')->post('/', 'store')->name('admin.articles.store');
+    Route::middleware('can:detail articles')->get('/{article}', 'show')->name('admin.articles.show');
+    Route::middleware('can:update articles')->put('/{article}', 'update')->name('admin.articles.update');
+    Route::middleware('can:delete articles')->delete('/{article}', 'destroy')->name('admin.articles.delete');
 });
-
-Route::middleware(['auth'])->resource('articles', ArticleController::class)->names(
-    [
-        'index' => 'admin.articles.index',
-        'create' => 'admin.articles.create',
-        'store' => 'admin.articles.store',
-        'show' => 'admin.articles.show',
-        'update' => 'admin.articles.update',
-        'destroy' => 'admin.articles.destroy',
-    ]
-)->whereNumber('article');
-
 
 
