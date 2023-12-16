@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreArticleRequest;
 use App\Http\Requests\UpdateArticleRequest;
 use App\Entities\Article;
+use App\Models\ArticleStatus;
 use App\Repositories\ArticleRepository;
 use App\Repositories\ArticleRepositoryEloquent;
 use Illuminate\Http\RedirectResponse;
@@ -30,8 +31,9 @@ class ArticleController extends Controller
      */
     public function index(): View
     {
+        $status_list = ArticleStatus::all();
         $articles = $this->repository->my_articles();
-        return view('admin.articles', ['articles' => $articles, 'title' => 'Articles']);
+        return view('admin.articles', ['articles' => $articles, 'title' => 'Articles', 'status_list' => $status_list]);
     }
 
     /**
@@ -55,7 +57,8 @@ class ArticleController extends Controller
      */
     public function show(Article $article): View
     {
-        return view('admin.article', compact('article'));
+        $status_list = ArticleStatus::all();
+        return view('admin.article', compact('article', 'status_list'));
     }
 
     /**
@@ -63,6 +66,7 @@ class ArticleController extends Controller
      */
     public function update(UpdateArticleRequest $request, Article $article): RedirectResponse
     {
+        $this->repository->update($request->validated(), $article->id);
         return to_route('admin.articles.show', ['article' => $article->id]);
     }
 
