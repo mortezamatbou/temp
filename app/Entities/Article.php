@@ -9,6 +9,8 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Prettus\Repository\Contracts\Transformable;
 use Prettus\Repository\Traits\TransformableTrait;
+use Spatie\Activitylog\LogOptions;
+use Spatie\Activitylog\Traits\LogsActivity;
 
 /**
  * Class Article.
@@ -17,7 +19,7 @@ use Prettus\Repository\Traits\TransformableTrait;
  */
 class Article extends Model implements Transformable
 {
-    use TransformableTrait, HasFactory;
+    use TransformableTrait, HasFactory, LogsActivity;
 
     protected $table = 'articles';
 
@@ -30,6 +32,9 @@ class Article extends Model implements Transformable
     protected $attributes = [
         'status_id' => 1 // 1=active
     ];
+
+     protected static $recordEvents = ['updated', 'created', 'deleted'];
+
 
     protected $fillable = [
         'user_id',
@@ -51,6 +56,15 @@ class Article extends Model implements Transformable
         return $this->belongsTo(ArticleStatus::class)->withDefault([
             'status_title' => 'active'
         ]);
+    }
+
+    public function getActivitylogOptions(): LogOptions
+    {
+        $opt = LogOptions::defaults();
+        $opt->logName = 'articles';
+        $opt->logOnlyDirty = true;
+        $opt->logFillable();
+        return $opt;
     }
 
 }
