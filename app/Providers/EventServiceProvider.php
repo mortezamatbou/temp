@@ -2,7 +2,7 @@
 
 namespace App\Providers;
 
-use App\Models\Article;
+use App\Entities\Article;
 use App\Observers\ArticleObserver;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
