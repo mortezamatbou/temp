@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9c491b8531eec05ba41a11d9276a5749",
+    "content-hash": "edd985cb24c9c2957fc03ff22daa3057",
     "packages": [
         {
             "name": "brick/math",
@@ -63,16 +63,16 @@
         },
         {
             "name": "carbonphp/carbon-doctrine-types",
-            "version": "3.0.0",
+            "version": "3.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/CarbonPHP/carbon-doctrine-types.git",
-                "reference": "49856fbc09fe91b5433381faec60e3620ad364ad"
+                "reference": "a31d3358a2a5d6ae947df1691d1f321418a5f3d5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/CarbonPHP/carbon-doctrine-types/zipball/49856fbc09fe91b5433381faec60e3620ad364ad",
-                "reference": "49856fbc09fe91b5433381faec60e3620ad364ad",
+                "url": "https://api.github.com/repos/CarbonPHP/carbon-doctrine-types/zipball/a31d3358a2a5d6ae947df1691d1f321418a5f3d5",
+                "reference": "a31d3358a2a5d6ae947df1691d1f321418a5f3d5",
                 "shasum": ""
             },
             "require": {
@@ -112,7 +112,7 @@
             ],
             "support": {
                 "issues": "https://github.com/CarbonPHP/carbon-doctrine-types/issues",
-                "source": "https://github.com/CarbonPHP/carbon-doctrine-types/tree/3.0.0"
+                "source": "https://github.com/CarbonPHP/carbon-doctrine-types/tree/3.1.0"
             },
             "funding": [
                 {
@@ -128,7 +128,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2023-10-01T14:36:55+00:00"
+            "time": "2023-12-10T15:33:53+00:00"
         },
         {
             "name": "dflydev/dot-access-data",
@@ -2251,16 +2251,16 @@
         },
         {
             "name": "nikic/php-parser",
-            "version": "v4.17.1",
+            "version": "v4.18.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nikic/PHP-Parser.git",
-                "reference": "a6303e50c90c355c7eeee2c4a8b27fe8dc8fef1d"
+                "reference": "1bcbb2179f97633e98bbbc87044ee2611c7d7999"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/a6303e50c90c355c7eeee2c4a8b27fe8dc8fef1d",
-                "reference": "a6303e50c90c355c7eeee2c4a8b27fe8dc8fef1d",
+                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/1bcbb2179f97633e98bbbc87044ee2611c7d7999",
+                "reference": "1bcbb2179f97633e98bbbc87044ee2611c7d7999",
                 "shasum": ""
             },
             "require": {
@@ -2301,9 +2301,9 @@
             ],
             "support": {
                 "issues": "https://github.com/nikic/PHP-Parser/issues",
-                "source": "https://github.com/nikic/PHP-Parser/tree/v4.17.1"
+                "source": "https://github.com/nikic/PHP-Parser/tree/v4.18.0"
             },
-            "time": "2023-08-13T19:53:39+00:00"
+            "time": "2023-12-10T21:03:43+00:00"
         },
         {
             "name": "nunomaduro/termwind",
@@ -2465,6 +2465,129 @@
                 }
             ],
             "time": "2023-11-12T21:59:55+00:00"
+        },
+        {
+            "name": "prettus/l5-repository",
+            "version": "2.9.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/andersao/l5-repository.git",
+                "reference": "a9b4e7255988ea9f18b016b96e16967891dbfef6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/andersao/l5-repository/zipball/a9b4e7255988ea9f18b016b96e16967891dbfef6",
+                "reference": "a9b4e7255988ea9f18b016b96e16967891dbfef6",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/config": "~5.0|~6.0|~7.0|^8.0|^9.0|^10.0",
+                "illuminate/console": "~5.0|~6.0|~7.0|^8.0|^9.0|^10.0",
+                "illuminate/database": "~5.0|~6.0|~7.0|^8.0|^9.0|^10.0",
+                "illuminate/filesystem": "~5.0|~6.0|~7.0|^8.0|^9.0|^10.0",
+                "illuminate/http": "~5.0|~6.0|~7.0|^8.0|^9.0|^10.0",
+                "illuminate/pagination": "~5.0|~6.0|~7.0|^8.0|^9.0|^10.0",
+                "illuminate/support": "~5.0|~6.0|~7.0|^8.0|^9.0|^10.0",
+                "illuminate/validation": "~5.0|~6.0|~7.0|^8.0|^9.0|^10.0",
+                "prettus/laravel-validation": "~1.1|~1.2|~1.3|~1.4"
+            },
+            "suggest": {
+                "league/fractal": "Required to use the Fractal Presenter (0.12.*).",
+                "prettus/laravel-validation": "Required to provide easy validation with the repository (1.1.*)",
+                "robclancy/presenter": "Required to use the Presenter Model (1.3.*)"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Prettus\\Repository\\Providers\\RepositoryServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Prettus\\Repository\\": "src/Prettus/Repository/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Anderson Andrade",
+                    "email": "contato@andersonandra.de",
+                    "homepage": "http://andersonandra.de",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Laravel 5|6|7|8|9|10 - Repositories to  the database layer",
+            "homepage": "http://andersao.github.io/l5-repository",
+            "keywords": [
+                "cache",
+                "eloquent",
+                "laravel",
+                "model",
+                "repository"
+            ],
+            "support": {
+                "docs": "http://andersao.github.io/l5-repository",
+                "email": "contato@andersonandra.de",
+                "issues": "https://github.com/andersao/l5-repository/issues",
+                "source": "https://github.com/andersao/l5-repository",
+                "wiki": "https://github.com/andersao/l5-repository"
+            },
+            "time": "2023-02-22T02:22:15+00:00"
+        },
+        {
+            "name": "prettus/laravel-validation",
+            "version": "1.5.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/andersao/laravel-validator.git",
+                "reference": "5af73c58801fdd0344dd6281d0ae5ae7df248ec3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/andersao/laravel-validator/zipball/5af73c58801fdd0344dd6281d0ae5ae7df248ec3",
+                "reference": "5af73c58801fdd0344dd6281d0ae5ae7df248ec3",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "~5.4|^6.0|^7.0|^8.0|^9.0|^10.0",
+                "illuminate/validation": "~5.4|^6.0|^7.0|^8.0|^9.0|^10.0",
+                "php": ">=5.4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Prettus\\Validator\\": "src/Prettus/Validator/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "authors": [
+                {
+                    "name": "Anderson Andrade",
+                    "email": "contato@andersonandra.de",
+                    "homepage": "http://andersonandra.de",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Laravel Validation Service",
+            "homepage": "http://andersao.github.io/laravel-validation",
+            "keywords": [
+                "laravel",
+                "service",
+                "validation"
+            ],
+            "support": {
+                "docs": "http://andersao.github.io/laravel-validation",
+                "email": "contato@andersonandra.de",
+                "issues": "https://github.com/andersao/laravel-validation/issues",
+                "source": "https://github.com/andersao/laravel-validation",
+                "wiki": "https://github.com/andersao/laravel-validation"
+            },
+            "time": "2023-02-22T13:20:29+00:00"
         },
         {
             "name": "psr/clock",
@@ -3182,6 +3305,239 @@
                 }
             ],
             "time": "2023-11-08T05:53:05+00:00"
+        },
+        {
+            "name": "spatie/laravel-activitylog",
+            "version": "4.7.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/spatie/laravel-activitylog.git",
+                "reference": "ec65a478a909b8df1b4f0c3c45de2592ca7639e5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/spatie/laravel-activitylog/zipball/ec65a478a909b8df1b4f0c3c45de2592ca7639e5",
+                "reference": "ec65a478a909b8df1b4f0c3c45de2592ca7639e5",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/config": "^8.0 || ^9.0 || ^10.0",
+                "illuminate/database": "^8.69 || ^9.27 || ^10.0",
+                "illuminate/support": "^8.0 || ^9.0 || ^10.0",
+                "php": "^8.0",
+                "spatie/laravel-package-tools": "^1.6.3"
+            },
+            "require-dev": {
+                "ext-json": "*",
+                "orchestra/testbench": "^6.23 || ^7.0 || ^8.0",
+                "pestphp/pest": "^1.20"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Spatie\\Activitylog\\ActivitylogServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "files": [
+                    "src/helpers.php"
+                ],
+                "psr-4": {
+                    "Spatie\\Activitylog\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Freek Van der Herten",
+                    "email": "freek@spatie.be",
+                    "homepage": "https://spatie.be",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Sebastian De Deyne",
+                    "email": "sebastian@spatie.be",
+                    "homepage": "https://spatie.be",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Tom Witkowski",
+                    "email": "dev.gummibeer@gmail.com",
+                    "homepage": "https://gummibeer.de",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A very simple activity logger to monitor the users of your website or application",
+            "homepage": "https://github.com/spatie/activitylog",
+            "keywords": [
+                "activity",
+                "laravel",
+                "log",
+                "spatie",
+                "user"
+            ],
+            "support": {
+                "issues": "https://github.com/spatie/laravel-activitylog/issues",
+                "source": "https://github.com/spatie/laravel-activitylog/tree/4.7.3"
+            },
+            "funding": [
+                {
+                    "url": "https://spatie.be/open-source/support-us",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/spatie",
+                    "type": "github"
+                }
+            ],
+            "time": "2023-01-25T17:04:51+00:00"
+        },
+        {
+            "name": "spatie/laravel-package-tools",
+            "version": "1.16.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/spatie/laravel-package-tools.git",
+                "reference": "cc7c991555a37f9fa6b814aa03af73f88026a83d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/spatie/laravel-package-tools/zipball/cc7c991555a37f9fa6b814aa03af73f88026a83d",
+                "reference": "cc7c991555a37f9fa6b814aa03af73f88026a83d",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/contracts": "^9.28|^10.0",
+                "php": "^8.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "^1.5",
+                "orchestra/testbench": "^7.7|^8.0",
+                "pestphp/pest": "^1.22",
+                "phpunit/phpunit": "^9.5.24",
+                "spatie/pest-plugin-test-time": "^1.1"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Spatie\\LaravelPackageTools\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Freek Van der Herten",
+                    "email": "freek@spatie.be",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Tools for creating Laravel packages",
+            "homepage": "https://github.com/spatie/laravel-package-tools",
+            "keywords": [
+                "laravel-package-tools",
+                "spatie"
+            ],
+            "support": {
+                "issues": "https://github.com/spatie/laravel-package-tools/issues",
+                "source": "https://github.com/spatie/laravel-package-tools/tree/1.16.1"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/spatie",
+                    "type": "github"
+                }
+            ],
+            "time": "2023-08-23T09:04:39+00:00"
+        },
+        {
+            "name": "spatie/laravel-permission",
+            "version": "6.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/spatie/laravel-permission.git",
+                "reference": "299dd2c9bce700ea641021c1aea0dfece25e541d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/spatie/laravel-permission/zipball/299dd2c9bce700ea641021c1aea0dfece25e541d",
+                "reference": "299dd2c9bce700ea641021c1aea0dfece25e541d",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/auth": "^8.12|^9.0|^10.0|^11.0",
+                "illuminate/container": "^8.12|^9.0|^10.0|^11.0",
+                "illuminate/contracts": "^8.12|^9.0|^10.0|^11.0",
+                "illuminate/database": "^8.12|^9.0|^10.0|^11.0",
+                "php": "^8.0"
+            },
+            "require-dev": {
+                "laravel/passport": "^11.0",
+                "orchestra/testbench": "^6.23|^7.0|^8.0|^9.0",
+                "phpunit/phpunit": "^9.4|^10.1"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-main": "6.x-dev",
+                    "dev-master": "6.x-dev"
+                },
+                "laravel": {
+                    "providers": [
+                        "Spatie\\Permission\\PermissionServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "files": [
+                    "src/helpers.php"
+                ],
+                "psr-4": {
+                    "Spatie\\Permission\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Freek Van der Herten",
+                    "email": "freek@spatie.be",
+                    "homepage": "https://spatie.be",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Permission handling for Laravel 8.0 and up",
+            "homepage": "https://github.com/spatie/laravel-permission",
+            "keywords": [
+                "acl",
+                "laravel",
+                "permission",
+                "permissions",
+                "rbac",
+                "roles",
+                "security",
+                "spatie"
+            ],
+            "support": {
+                "issues": "https://github.com/spatie/laravel-permission/issues",
+                "source": "https://github.com/spatie/laravel-permission/tree/6.2.0"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/spatie",
+                    "type": "github"
+                }
+            ],
+            "time": "2023-12-09T01:40:07+00:00"
         },
         {
             "name": "symfony/console",
@@ -6034,16 +6390,16 @@
         },
         {
             "name": "mockery/mockery",
-            "version": "1.6.6",
+            "version": "1.6.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/mockery/mockery.git",
-                "reference": "b8e0bb7d8c604046539c1115994632c74dcb361e"
+                "reference": "0cc058854b3195ba21dc6b1f7b1f60f4ef3a9c06"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mockery/mockery/zipball/b8e0bb7d8c604046539c1115994632c74dcb361e",
-                "reference": "b8e0bb7d8c604046539c1115994632c74dcb361e",
+                "url": "https://api.github.com/repos/mockery/mockery/zipball/0cc058854b3195ba21dc6b1f7b1f60f4ef3a9c06",
+                "reference": "0cc058854b3195ba21dc6b1f7b1f60f4ef3a9c06",
                 "shasum": ""
             },
             "require": {
@@ -6056,9 +6412,7 @@
             },
             "require-dev": {
                 "phpunit/phpunit": "^8.5 || ^9.6.10",
-                "psalm/plugin-phpunit": "^0.18.4",
-                "symplify/easy-coding-standard": "^11.5.0",
-                "vimeo/psalm": "^4.30"
+                "symplify/easy-coding-standard": "^12.0.8"
             },
             "type": "library",
             "autoload": {
@@ -6115,7 +6469,7 @@
                 "security": "https://github.com/mockery/mockery/security/advisories",
                 "source": "https://github.com/mockery/mockery"
             },
-            "time": "2023-08-09T00:03:52+00:00"
+            "time": "2023-12-10T02:24:34+00:00"
         },
         {
             "name": "myclabs/deep-copy",
@@ -6385,16 +6739,16 @@
         },
         {
             "name": "phpunit/php-code-coverage",
-            "version": "10.1.9",
+            "version": "10.1.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/php-code-coverage.git",
-                "reference": "a56a9ab2f680246adcf3db43f38ddf1765774735"
+                "reference": "599109c8ca6bae97b23482d557d2874c25a65e59"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/a56a9ab2f680246adcf3db43f38ddf1765774735",
-                "reference": "a56a9ab2f680246adcf3db43f38ddf1765774735",
+                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/599109c8ca6bae97b23482d557d2874c25a65e59",
+                "reference": "599109c8ca6bae97b23482d557d2874c25a65e59",
                 "shasum": ""
             },
             "require": {
@@ -6451,7 +6805,7 @@
             "support": {
                 "issues": "https://github.com/sebastianbergmann/php-code-coverage/issues",
                 "security": "https://github.com/sebastianbergmann/php-code-coverage/security/policy",
-                "source": "https://github.com/sebastianbergmann/php-code-coverage/tree/10.1.9"
+                "source": "https://github.com/sebastianbergmann/php-code-coverage/tree/10.1.10"
             },
             "funding": [
                 {
@@ -6459,7 +6813,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2023-11-23T12:23:20+00:00"
+            "time": "2023-12-11T06:28:43+00:00"
         },
         {
             "name": "phpunit/php-file-iterator",
