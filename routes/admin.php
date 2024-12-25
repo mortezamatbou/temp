@@ -23,6 +23,7 @@ Route::middleware(['auth'])->prefix('articles')->controller(ArticleController::c
     Route::middleware('can:detail articles')->get('/{article}', 'show')->name('admin.articles.show');
     Route::middleware('can:update articles')->put('/{article}', 'update')->name('admin.articles.update');
     Route::middleware('can:delete articles')->delete('/{article}', 'destroy')->name('admin.articles.delete');
+    Route::get('/test', 'test');
 });
 
 

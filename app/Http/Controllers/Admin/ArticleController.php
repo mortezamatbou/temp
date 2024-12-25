@@ -11,6 +11,7 @@ use App\Repositories\ArticleRepository;
 use App\Repositories\ArticleRepositoryEloquent;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\View\View;
+use Spatie\Activitylog\Models\Activity;
 
 class ArticleController extends Controller
 {
@@ -78,4 +79,30 @@ class ArticleController extends Controller
     {
         return to_route('admin.articles.show', ['article' => $article->id]);
     }
+
+    public function test()
+    {
+        // $user = User::find(8);
+        // $user = User::find(6);
+        // activity()->causedBy($user)->withProperty('prop1', 'value1')->log('Third Log');
+        // $activities = Activity::all()->last();
+        // pre_print($activities->getExtraProperty('prop1'));
+        // pre_print($activities->properties['prop1']);
+
+        // activity()->withProperties(['name' => 'Morteza', 'action' => 'create articles'])->log('User added new article');
+
+        // Article::destroy(15);
+
+         $last = Activity::all()->last();
+         pre_print($last->toArray());
+
+//        /** @var Article $article */
+//        $article = Article::find(1);
+//        $article->title = 'New Title';
+//        $article->save();
+//
+//        pre_print($article->isDirty('title'));
+
+    }
+
 }
