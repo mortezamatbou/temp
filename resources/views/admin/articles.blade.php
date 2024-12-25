@@ -48,7 +48,7 @@
             </div>
         </div>
     </form>
-    <table class="table col-12 mt-4">
+    <table class="table col-12 mt-4 table-responsive">
         <tr>
             <td>#</td>
             <td>Title</td>
