@@ -2,6 +2,9 @@
 
 namespace App\Providers;
 
+use App\Jobs\ProcessArticle;
+use App\Models\User;
+use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
 
@@ -21,5 +24,8 @@ class AppServiceProvider extends ServiceProvider
     public function boot(): void
     {
         View::share('title', 'My Simple App');
+        $this->app->bindMethod([ProcessArticle::class, 'handle'], function (ProcessArticle $job, Application $app) {
+            return $job->handle($app->make(User::class));
+        });
     }
 }

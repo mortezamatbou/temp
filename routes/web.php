@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\PaymentController;
+use App\Models\Category;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,5 +17,27 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('front.index');
+});
+
+Route::get('film', function() {
+    $result = Category::with('film')->get();
+    $data = [];
+    foreach($result as $row) {
+        $data[$row->title] = $row->film->count();
+        $data[$row->title] = $row->film()->count();
+    }
+
+    return $data;
+});
+
+
+Route::prefix('articles')->group(function () {
+    Route::get('/', [ArticleController::class, 'list']);
+    Route::get('/users', [ArticleController::class, 'users']);
+    Route::get('/helper', [ArticleController::class, 'helper']);
+    Route::get('/helper2', [ArticleController::class, 'helper2']);
+    Route::get('/trait', [ArticleController::class, 'trait']);
+    Route::get('/services', PaymentController::class);
+    Route::get('/{id}', [ArticleController::class, 'detail']);
 });

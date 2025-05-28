@@ -3,6 +3,8 @@
 namespace App\Providers;
 
 use App\Entities\Article;
+use App\Events\ArticleUpdate;
+use App\Listeners\ArticleListener;
 use App\Observers\ArticleObserver;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
@@ -20,6 +22,7 @@ class EventServiceProvider extends ServiceProvider
         Registered::class => [
             SendEmailVerificationNotification::class,
         ],
+        ArticleUpdate::class => [ArticleListener::class]
     ];
 
     /**
